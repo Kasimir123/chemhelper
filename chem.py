@@ -1,5 +1,5 @@
 # Creates the Help List, Add all new functions to it
-help_list = ['mol_to_mass', 'mass_to_mol', 'periodic_table', 'list_periodic_table']
+help_list = ['mol_to_mass', 'mass_to_mol', 'periodic_table', 'list_periodic_table', 'absolute_to_percent', 'percent_to_absolute']
 
 # Create Variable for Avogadros Number
 avogadros_number = 6.022 * 10 ** 23
@@ -88,48 +88,55 @@ periodic_elements = {
     },
 }
 
+def con_check():
+    con_check = raw_input('Would you like to continue?')
+    if con_check == 'y':
+        conversation()
+    else:
+        print 'Goodbye'
 
 # Function for doing mol to mass
 def mol_to_mass(x):
     mol = float(x)
     mass = mol / avogadros_number 
     print mass 
-    con_check = raw_input('Would you like to continue?')
-    if con_check == 'y':
-        conversation()
-    else:
-        print 'Goodbye'
+    con_check()
     
 # Function for doing mass to mol
 def mass_to_mol(x):
     mass = float(x)
     mol = mass * avogadros_number 
     print mol 
-    con_check = raw_input('Would you like to continue?')
-    if con_check == 'y':
-        conversation()
-    else:
-        print 'Goodbye'
+    con_check()
         
 # Function which gives information for a specific element
 def periodic_table(which_element):
     for elements in which_element:
         print periodic_elements[which_element]
-    con_check = raw_input('Would you like to continue?')
-    if con_check == 'y':
-        conversation()
-    else:
-        print 'Goodbye'
+    con_check()
         
 # Function that prints out the entire list of elements
 def list_periodic_table():
     for elements in periodic_elements:
         print elements
-    con_check = raw_input('Would you like to continue?')
-    if con_check == 'y':
-        conversation()
-    else:
-        print 'Goodbye'
+    con_check()
+        
+# Function that converts absolute uncertainty to percent uncertainty 
+def absolute_to_percent(x, y):
+    value = float(x)
+    absolute_uncertainty = float(y)
+    percent_uncertainty = (absolute_uncertainty / value) * 100
+    print 'The answer is %s plus or minus %s percent' % (value, percent_uncertainty)
+    con_check()
+    
+# Function that converts percent uncertainty to absolute uncertainty 
+def percent_to_absolute(x, y):
+    value = float(x)
+    percent_uncertainty = float(y)
+    absolute_uncertainty = (percent_uncertainty / 100) * value
+    print 'The answer is %s plus or minus %s' % (value, absolute_uncertainty)
+    con_check()
+    
     
     
 
@@ -150,6 +157,16 @@ def conversation():
             periodic_table(which_element)
     elif text == 'list_periodic_table':
         list_periodic_table()
+    elif text == 'absolute_to_percent':
+        x = raw_input('What is the value of your measurement?')
+        y = raw_input('What is the value of your uncertainty?')
+        if x > 0 and y > 0:
+            absolute_to_percent(x,y)
+    elif text == 'percent_to_absolute':
+        x = raw_input('What is the value of your measurement?')
+        y = raw_input('What is the value of your percent uncertainty?')
+        if x > 0 and y > 0:
+            percent_to_absolute(x,y)
     else:
         print 'The command you gave is not valid, try:'
         for each in help_list:
