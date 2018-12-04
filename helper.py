@@ -14,9 +14,9 @@ def elements():
 
 # Element Function
 # Lists the in depth information for a specific element
-def element(name):
+def element():
     for element in elementdata:
-        if elementdata[element]['name'] == name or elementdata[element]['small'] == name:
+        if elementdata[element]['name'] == sys.argv[2] or elementdata[element]['small'] == sys.argv[2]:
             print(elementdata[element])
 
 # Load Commands JSON - Saves commands as commands
@@ -27,8 +27,5 @@ with open('commands.json') as t:
 # Main Loop
 for command in commands:
     if sys.argv[1] == commands[command]['long'] or sys.argv[1] == commands[command]['short']:
-        if len(sys.argv) == 3:
-            eval(commands[command]['command'] + "('" + sys.argv[2] + "')")
-        else: 
-            eval(commands[command]['command'] + '()')
+        eval(commands[command]['command'])
         print('\n' + commands[command]['description'])
