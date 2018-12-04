@@ -19,28 +19,16 @@ def element(name):
         if elementdata[element]['name'] == name or elementdata[element]['small'] == name:
             print(elementdata[element])
 
-# Dictionary of commands
-commands = {
-    'elements' : {
-        'long' : 'elements',
-        'short' : 'none',
-        'syntax' : 'helper.py elements',
-        'command' : elements,
-        'description' : 'Prints all element names, symbols, and atomic weights. To see all information for a specific element use the element (-e) feature.'
-    },
-    'element' : {
-        'long' : 'element',
-        'short' : '-e',
-        'syntax' : 'helper.py element (ELEMENT_NAME or ELEMENT_SYMBOL) || helper.py -e (ELEMENT_NAME or ELEMENT_SYMBOL)',
-        'command' : element,
-        'description' : 'Prints all information for a specific element'
-    }
-}
+# Load Commands JSON - Saves commands as commands
+with open('commands.json') as t:
+    commands = json.load(t)
+
+
 # Main Loop
 for command in commands:
     if sys.argv[1] == commands[command]['long'] or sys.argv[1] == commands[command]['short']:
         if len(sys.argv) == 3:
-            commands[command]['command'](sys.argv[2])
+            eval(commands[command]['command'] + "('" + sys.argv[2] + "')")
         else: 
-            commands[command]['command']()
+            eval(commands[command]['command'] + '()')
         print('\n' + commands[command]['description'])
