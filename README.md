@@ -10,13 +10,13 @@ The Python Chemistry Helper is meant to help people with chemistry.
 * hydrogen spectrum jump to wavelength (-hydrospec 1STN 2NDN)
 * Orbital Information (-oi)
 * add electron config to element function
-* # of unpaired electrons
+* number of unpaired electrons
 * List elements with similar properties (-simprop ELEMENT)
 * Add atomic radius to .json
 * Compound naming - this will most likely be annoying :/
 * Lewis Structures?
 * How many moles of something within a compound
-* # of valence electrons added to element function
+* number of valence electrons added to element function
 * Bond Length
 * Gas calculations (ideal and non ideal)
 * Calculate enthalpy, entropy and free energy
