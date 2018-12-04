@@ -1,0 +1,16 @@
+{
+    "elements": {
+        "long": "elements",
+        "short": "none",
+        "syntax": "helper.py elements",
+        "command": "elements",
+        "description": "Prints all element names, symbols, and atomic weights. To see all information for a specific element use the element (-e) feature."
+    },
+    "element": {
+        "long": "element",
+        "short": "-e",
+        "syntax": "helper.py element (ELEMENT_NAME or ELEMENT_SYMBOL) || helper.py -e (ELEMENT_NAME or ELEMENT_SYMBOL)",
+        "command": "element",
+        "description": "Prints all information for a specific element"
+    }
+}
