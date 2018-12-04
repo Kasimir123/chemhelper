@@ -20,3 +20,4 @@ The Python Chemistry Helper is meant to help people with chemistry.
 * Bond Length
 * Gas calculations (ideal and non ideal)
 * Calculate enthalpy, entropy and free energy
+* figure out why git is acting weird
