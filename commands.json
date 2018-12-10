@@ -12,5 +12,12 @@
         "syntax": "helper.py element (ELEMENT_NAME or ELEMENT_SYMBOL) || helper.py -e (ELEMENT_NAME or ELEMENT_SYMBOL)",
         "command": "element()",
         "description": "Prints all information for a specific element"
+    },
+    "molmass": {
+        "long": "molmass",
+        "short": "-m",
+        "syntax": "helper.py molmass || helper.py -m",
+        "command": "molMass()",
+        "description": "Converts mols to mass and mass to mols. Supports scientific notation."
     }
 }

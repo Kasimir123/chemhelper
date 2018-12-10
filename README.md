@@ -4,7 +4,6 @@ The Python Chemistry Helper is meant to help people with chemistry.
 * 12/3/18 - Changed to command arguments rather than interactive dialogue. Implemented dynamic and clean command reading as well as both elements and element commands.
 * 12/3/18 - Commands now pulled from commands.json
 ## To Do:
-* mol to mass and mass to mol conversion (-m-m ELEMENT MASS/MOL MEASUREMENT)
 * Coulomb's Law (-cl 1STCHARGE 2NDCHARGE DISTANCE)
 * hydrogen spectrum jump to wavelength (-hydrospec 1STN 2NDN)
 * Orbital Information (-oi)
